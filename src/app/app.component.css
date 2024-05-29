@@ -1,7 +1,24 @@
 .nv-ingenieria{
   color: rgb(196, 196, 196);
+  margin: 0;
 }
-
+.reloj{
+  padding: 0px 20px;
+}
+.hora{
+  color: rgb(216, 225, 233);
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+.fecha{
+  color: rgb(216, 225, 233);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  margin:0;
+}
 /* :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
     --electric-violet: oklch(53.18% 0.28 296.97);
