@@ -19,6 +19,129 @@
   text-align: center;
   margin:0;
 }
+.bg-dark-bar{
+  background: #222222;
+  /* background: #212529; */
+}
+.offcanvas{
+  width: 260px;
+  background: #222222;
+}
+.menuSidebar{
+  width: 28px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+}
+.menuSidebar span{
+  width: 100%;
+  height: 2px;
+  border-radius: 50%;
+  background-color: #5c5c5c;
+  transition: transform .3s, background-color .3s;
+}
+.menuSidebar:hover span:nth-child(1){
+  background: #818181;
+}
+.menuSidebar:hover span:nth-child(2){
+  background: #818181;
+  transform: translateX(5px);
+  }
+  .menuSidebar:hover span:nth-child(3){
+    background: #818181;
+    transform: translateX(10px);
+}
+.menuSidebarClose{
+  width: 25px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  }
+.menuSidebarClose span{
+  width: 100%;
+  height: 2px;
+  border-radius: 50%;
+  background-color: #5c5c5c;
+  transition: transform .3s, background-color .3s, opacity .3s;
+}
+.menuSidebarClose:hover span:nth-child(1){
+  background-color: #ec6c6c;
+  transform: translateY(7px) rotate(-45deg);
+}
+.menuSidebarClose:hover span:nth-child(2){
+  transform: translate(-50%);
+  opacity: 0;
+}
+.menuSidebarClose:hover span:nth-child(3){
+  background-color: #ec6c6c;
+  transform: translateY(-7px) rotate(45deg);
+}
+.hr-sidebar{
+  margin: 0;
+  color: #f0f0f0;
+}
+.offcanvas-title{
+  color: #c2c2c2;
+}
+.offcanvas-header{
+  padding: 14px 15px;
+}
+
+.offcanvas-body .sidebar-content{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+.lists{
+  padding: 0 !important;
+}
+.sidebar-content .list{
+  list-style: none;
+}
+.list .nav-link{
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 10px 0px 10px 15px;
+  /* border-radius: 8px; */
+  text-decoration: none;
+  color: #616161;
+  transition: padding .3s;
+}
+.nav-link .bi{
+  padding: 0 10px;
+  font-size: 23px;
+}
+.list .nav-link:hover {
+  background-color: #464646;
+  color: #c7c7c7;
+  padding: 10px 0px 10px 30px;
+  /* transform: translate(20px); */
+}
+.nav-link:hover span:nth-child(1){
+  /* color: #ec6c6c; */
+  transform-origin: top;
+  animation: movSidebarMenuBi .8s both ease-in-out alternate ;
+}
+
+@keyframes movSidebarMenuBi{
+  0%{transform: rotate(0deg);}
+  25%{transform: rotate(-25deg);}
+  50%{transform: rotate(25deg);}
+  75%{transform: rotate(-25deg);}
+  
+  100%{transform: rotate(0deg);}
+}
+
+/* bg-bar #212529 */
 /* :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
     --electric-violet: oklch(53.18% 0.28 296.97);

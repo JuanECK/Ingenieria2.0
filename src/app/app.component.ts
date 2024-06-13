@@ -16,6 +16,22 @@ export class AppComponent implements OnInit {
 
   // propiedades del componente
   title = 'Ingenieria2.0';
+  links:any;
+  elemento:any;
+
+    // metodo de inicializacion
+    ngOnInit(){
+      this.mostrarHora();
+  
+       // crea un arreglo de los elementos en el Dom con la clase .nav-link
+      // this.links = document.querySelectorAll('.nav-link')
+      // crea para todos los elementos en el areglo anterior un evento
+      // this.links.forEach((value:any) => {
+      //   value.addEventListener("click", ()=>{
+      //   })
+      // });
+  
+    }
 
   // funcion que retorna la fecha
   getNowDate() {
@@ -55,11 +71,11 @@ export class AppComponent implements OnInit {
       }else{
         h = h -12;
       }
-      if(h < 10){
-        returnDate +=`0${h}:`
-      }else{
+      // if(h < 10){
+      //   returnDate +=`0${h}:`
+      // }else{
         returnDate +=`${h}:`
-      }
+      // }
       ampm = " P.M.";
     }else{
       if(h < 10){
@@ -87,15 +103,11 @@ export class AppComponent implements OnInit {
       returnDate += `${s}`
      }
 
-    // returnDate +=h + ":" +m +":" + s + " " +ampm
     returnDate += ampm
     return returnDate;
   }
   
-  // metodo de inicializacion
-  ngOnInit(){
-    this.mostrarHora();
-  }
+
 
   mostrarHora(){
     setInterval(()=>{

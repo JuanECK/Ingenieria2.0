@@ -1,9 +1,19 @@
 
-<nav class="navbar bg-dark border-bottom border-body">
+<nav class="navbar bg-dark-bar border-bottom border-body">
   <div class="container">
-    <a class="navbar-brand" href="#">
-      <h2 class="nv-ingenieria">INGENIERIA</h2>
-    </a>
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" href="#">
+        <h2 class="nv-ingenieria">INGENIERIA</h2>
+      </a>
+      <a href="#" class="" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+       <div class="menuSidebar">
+        <span></span>
+        <span></span>
+        <span></span>
+       </div>
+      </a>
+    </div>
+
     <div class="reloj">
       <p class="hora">{{getHora()}}</p>
       <p class="fecha">{{ getNowDate() }}</p>
@@ -11,6 +21,86 @@
   </div>
 </nav>
 
+<!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+  Toggle static offcanvas
+</button> -->
+
+<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+  <div class="offcanvas-header d-flex justify-content-between">
+    <h5 class="offcanvas-title" id="staticBackdropLabel">Menu</h5>
+    <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+    <a href="#" class="" data-bs-dismiss="offcanvas" aria-label="Close">
+      <div class="menuSidebarClose">
+        <span></span>
+        <span></span>
+        <span></span>
+       </div>
+    </a>
+  </div>
+  <div class="offcanvas-body">
+    <div class="sidebar-content">
+      <ul class="lists">
+        <li class="list">
+          <hr class="hr-sidebar">
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <span class="bi-house bi"></span>
+            <span class="link">Inicio</span>
+          </a>
+          <hr class="hr-sidebar">
+        </li>
+        <li class="list">
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <span class="bi-cart4 bi"></span>
+            <span class="link">Orden de Compra</span>
+          </a>
+          <hr class="hr-sidebar">
+        </li>
+        <li class="list">
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <span class="bi-journal-text bi"></span>
+            <span class="link">Orden de Material</span>
+          </a>
+          <hr class="hr-sidebar">
+        </li>
+        <li class="list">
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <span class="bi-cone-striped bi"></span>
+            <span class="link">Entrega de Material</span>
+          </a>
+          <hr class="hr-sidebar">
+        </li>
+        <li class="list">
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <span class="bi-pin-map bi"></span>
+            <span class="link">Salida de Comision</span>
+          </a>
+          <hr class="hr-sidebar">
+        </li>
+        <li class="list">
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <span class="bi-rulers bi"></span>
+            <span class="link">Calibraciones</span>
+          </a>
+          <hr class="hr-sidebar">
+        </li>
+        <li class="list">
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <span class="bi-speedometer bi"></span>
+            <span class="link">Mantenimiento</span>
+          </a>
+          <hr class="hr-sidebar">
+        </li>
+        <li class="list">
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <span class="bi-tools bi"></span>
+            <span class="link">Configuracion</span>
+          </a>
+          <hr class="hr-sidebar">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <main class="main">
   <div class="content">
