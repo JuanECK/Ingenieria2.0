@@ -1,93 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-// import { meshClass } from './mesh/mesh.component'
-
-
+import { PadreComponent } from './padre/padre.component';
+import { MeshComponent } from './mesh/mesh.component';
+import { canvasBoxComponent } from './canvasBox/canvasBox.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, PadreComponent, MeshComponent, canvasBoxComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-
-
-
+  
+  
+  
   // newDate?:Date = new Date();
   // today: number = Date.now();
   // hora:any;
-
+  
   // propiedades del componente
   title = 'Ingenieria2.0';
   links:any;
   elemento:any;
-
-    // metodo de inicializacion
+  
+  // metodo de inicializacion
   ngOnInit(){
-    this.mostrarHora();
+    // this.mostrarHora();
 
-      // crea un arreglo de los elementos en el Dom con la clase .nav-link
+    // crea un arreglo de los elementos en el Dom con la clase .nav-link
     // this.links = document.querySelectorAll('.nav-link')
     // crea para todos los elementos en el areglo anterior un evento
     // this.links.forEach((value:any) => {
     //   value.addEventListener("click", ()=>{
     //   })
     // });
-
-    // function animate() {
-    //   renderer.render( scene, camera );
-    //   // cube.rotation.x += 0.01;
-    //   // cube.rotation.y += 0.01;
-    // }
-    // renderer.setAnimationLoop( animate );
-
-    // var myObjPromise = loadObj( "/cabeza/", "blenderCabeza" );
-
-    // myObjPromise.then(function(myObj:any){
-      
-    //   scene.add( myObj );
-      
-    //   myObj.position.y = 0;
-      
-    // });
-
-
-    // renderAnimate() {
-    //   torus.rotation.y += 0.01
-    //   controls.update();
-    //   renderer.render(scene, camera);
-
-    // }
-    // function animate2(){
-    //   requestAnimationFrame(animate2)
-    // }
-    // renderAnimate();
-
-
-
     
-    // animateCabeza();
-    
-    // function animate() {
-    //   requestAnimationFrame(animate)
-    //   torus.rotation.y += 0.01
-    //   // torus.forEach((t) => {
-    //   //     t.rotation.y += 0.01
-    //   // })
-    //   renderer.render(scene, camera);
-    //   controls.update();
-    //   // render()
-    // }
-      // animate()
-
-      // function render() {
-      //     renderer.render(scene, camera)
-      // }
-    // this.animateCabeza();
-  }
+}
 
 
   // funcion que retorna la fecha

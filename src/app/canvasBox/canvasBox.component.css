@@ -1,0 +1,15 @@
+#canvas-box{
+    width: 600px;
+    height: 400px;
+}
+.engine-wrapper {
+    /* background: #ffffff00;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}

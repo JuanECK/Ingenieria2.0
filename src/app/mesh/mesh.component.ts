@@ -1,18 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import * as THREE from 'three';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader, OrbitControls } from 'three/examples/jsm/Addons.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-camera.position.z = 5;
 
+// const contenedor = document.getElementById('canvas');
+const container = document.querySelector('.canvas_container');
+const canvas    = document.querySelector('.webgl_canvas');
+const sizes:any = {
+  width:  container?.clientWidth,
+  height: container?.clientHeight
+};
+
+// console.log(sizes)
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
+
+// const container = document.getElementById('canvas');
+// let container:any
+// container = document.getElementById('canvas');
+// console.log(container)
+
+// const w:any = container?.offsetWidth;
+// const h:any = container?.offsetHeight;
+// console.log('anchoC', container?.tagName)
+// console.log('anchoW', window.innerWidth)
+// renderer.setSize(w, h);
+// renderer.setSize(500, 400);
+renderer.setSize(sizes.width, sizes.height);
+// renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
+
+const scene = new THREE.Scene();
+// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const camera = new THREE.PerspectiveCamera( 75, sizes.width / sizes.height, 1, 1000 );
+camera.position.z = 5;
 
 var keyLight = new THREE.DirectionalLight(new THREE.Color('#ffffff'), 5);
 keyLight.position.set(-100, 0, 200).normalize;
@@ -56,12 +80,12 @@ loader.load(
 		gltf.asset; // Object
   
 	},
-	function ( xhr ) {
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-	},
-	function ( error ) {
-		console.log( 'An error happened' );
-	}
+	// function ( xhr ) {
+	// 	console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+	// },
+	// function ( error ) {
+	// 	console.log( 'An error happened' );
+	// }
 );
 
 
@@ -179,19 +203,52 @@ scene.add(torus)
 
 // -----------------------------
 
+
+// document.body.appendChild(contenedor); 
+
 @Component({
   selector: 'app-mesh',
   standalone: true,
   templateUrl: './mesh.component.html',
   styleUrl: './mesh.component.css'
 })
-export class MeshComponent {
-  constructor() {}
+export class MeshComponent implements OnInit {
 
-  animateCabeza() {
-    // requestAnimationFrame( this.animateCabeza );
-    // controls.update();
-    renderer.render(scene, camera);
-  };
+  // @ViewChild('rendererCanvas', {static: true})
+  // public rendererCanvas: ElementRef<HTMLCanvasElement>;
 
+  ngOnInit(){
+    let container = document.getElementById('canvas');
+    // console.log('ancho', container?.offsetWidth)
+    container?.classList.add('negro')
+     function animate() {
+      requestAnimationFrame(animate)
+      torus.rotation.y += 0.01
+      renderer.render(scene, camera);
+      controls.update();
+      render()
+    }
+      animate()
+      function render() {
+          renderer.render(scene, camera)
+      }
+  }
+  // constructor() {}
+
+  // animateCabeza() {
+  //   // requestAnimationFrame( this.animateCabeza );
+  //   // controls.update();
+  //   renderer.render(scene, camera);
+  // };
+
+  // renderAnimate() {
+  //     // torus.rotation.y += 0.01
+  //     controls.update();
+  //     renderer.render(scene, camera);
+
+  //   }
+    // function animate2(){
+    //   requestAnimationFrame(animate2)
+    // }
+    
 }
